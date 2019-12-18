@@ -2,4 +2,4 @@
 
 ## Juan Carrillo
 ## Sebastian Betancourt
-## Sara Ramos
+## Sara Ramos.
