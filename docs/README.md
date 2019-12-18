@@ -1,1 +1,4 @@
-## Aquí se debe  documentar todo el proceso del proyecto acorde a cada paquete de trabajo 
+#Documentación 1: Simulación del módulo de la camara.
+##Juan Carrillo
+##Sebastian Betancourt
+##Sara Ramos
