@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/juandcarrillo/Documents/GitHub/work02-simulation-grupo-2/hw/test_cam_TB_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/juandcarrillo/Documents/GitHub/work02-simulation-grupo-2/hw/test_cam_TB_isim_beh.wdb 
+Running: /home/sebas/Escritorio/repositorioSimulacion(not_in_right_spot)/work02-simulation-grupo-2/hw/test_cam_TB_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/sebas/Escritorio/repositorioSimulacion(not_in_right_spot)/work02-simulation-grupo-2/hw/test_cam_TB_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -11,7 +11,4 @@ Time resolution is 1 ps
 # run 30 ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 3840185 ns : File "/home/juandcarrillo/Documents/GitHub/work02-simulation-grupo-2/hw/src/test_cam_TB.v" Line 77
-# run all
-Stopped at time : 33653820 ns : File "/home/juandcarrillo/Documents/GitHub/work02-simulation-grupo-2/hw/src/test_cam_TB.v" Line 78
-# run all
+# exit 0
