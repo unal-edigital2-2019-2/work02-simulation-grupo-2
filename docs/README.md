@@ -27,3 +27,16 @@ Tiene un diagrama de caja negra que es el siguiente:
   - `DATA_OUT_RANGE`, que es un estado que avisa cuando ya se tiene la totalidad de los datos de una fila
   - `DONE`, que avisa cuando un fotograma ya está completo y se puede pasar a capturar otro
 
+Cada pixel tiene dos Bytes de información, los cuales la cámara envía a traves de un puerto de un Byte, por lo que la información completa de un pixel se recibe luego de dos ciclos de reloj. Para hacer el almacenamiento y envío correcto de esta información se hicieron se crearon dos cosas en el módulo:
+
+- Un registro temporal `temp_rgb`, que tiene el tamaño suficiente para almacenar un pixel completo
+- Una señal llamada `pixel_half`, la cuál está encargada de mostrar 0 si el registro `temp_rgb` tiene la información de medio pixel, o 1 si tiene la información de un pixel completo, estando lista para ser enviada.
+
+Una vez ya está la información de un pixel lo siguiente es hacer una compresión de la imágen, pasandola de `RGB565` a `RGB332`, esto fue hecho en código a traves de una concatenación, tomando partes específicas del registro `temp_rgb` y asignandolas a la salida `mem_px_data`, que las envía a la memoria ram de dos puertos:
+
+```verilog
+mem_px_data = {temp_rgb[15:13], temp_rgb[10:8],temp_rgb[4:3]};
+```
+
+
+La máquina de estados funciona teniendo en cuenta las señales de control de la cámara `vsync` y `href`, las cuales se encargan de mostrar los momentos en los que la cámara está haciendo captura de imágenes.
