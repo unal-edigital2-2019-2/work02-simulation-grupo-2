@@ -6,8 +6,11 @@
 
 **Sara Ramos** [cedula]
 
-Para esta primera entrega, se nos pidió que hicieramos el módulo encargado de hacer dos tareas:
+Para esta primera entrega, se nos pidió hacer lo siguiente:
 
-* Capturar los datos generados por la cámara en formato RGB565
-* Transformar el formato RGB565 a RGB332
+- Crear el módulo `cam_read.v`, encargado de hacer dos tareas:
 
+  - Capturar los datos generados por la cámara en formato RGB565
+  - Transformar el formato RGB565 a RGB332
+
+- Instanciar el módulo dentro del proyecto completo `test_cam.xise`, de tal forma que fuese posible simular y probar el funcionamiento del módulo.
