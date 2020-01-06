@@ -44,3 +44,21 @@ mem_px_data = {temp_rgb[15:13], temp_rgb[10:8],temp_rgb[4:3]};
 La máquina de estados funciona teniendo en cuenta las señales de control de la cámara `vsync` y `href`, las cuales se encargan de mostrar los momentos en los que la cámara está haciendo captura de imágenes.
 
 El módulo está configurado para hacer captura de imágenes en tamaño `QQCIF` (120 x 160). Si se desea usarlo para otro formato como `QCIF` O `CIF`, se deben configurar los parámetros `Maxwidthimage` y `Maxlengthimage` a los valores deseados.
+
+##Proceso de simulación
+
+Habiendo instanciado el módulo con el resto del hardware, procedimos a hacer la simulación.
+
+La simulación fue realizada gracias a una herramienta online creada por Eric Eastwood. Disponible en https://ericeastwood.com/lab/vga-simulator/. Este simulador cuenta con todas las consideraciones necesarias para simular,  requiere un archivo del cuál toma los datos para el primer frame de imagen, los siguientes frames ya dependen de la información otorgada por la cámara, que en este caso será iformación contenida en el testbench.
+
+Al hacer la simulación y dejarla correr cierto tiempo, empezó a generar imágenes, las cuales se muestran a continuación:
+
+<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/double.png?raw=true" width = "750" >
+
+En esta imágen se puede ver que el software generó en el primer frame la cámara, con los colores azul y morado, los cuales se definen poniendolos como información en hexadecimal en el documento `image.mem`. El segundo frame contiene la imagen que debe salir de la cámara, la cuál se encuentra definida y puede ser modificada en el testbench.
+
+Al acercar la imágen del segundo frame podemos ver lo siguiente:
+
+<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/red_close.png?raw=true" width = "750" >
+
+Esto lo interpretamos como puntos que quedaron sin información en la memoria ram. Se puede ver a traves de ellos y lo que se ve detras es la imágen del frame anterior.
