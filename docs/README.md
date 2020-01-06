@@ -42,3 +42,5 @@ mem_px_data = {temp_rgb[15:13], temp_rgb[10:8],temp_rgb[4:3]};
 
 
 La máquina de estados funciona teniendo en cuenta las señales de control de la cámara `vsync` y `href`, las cuales se encargan de mostrar los momentos en los que la cámara está haciendo captura de imágenes.
+
+El módulo está configurado para hacer captura de imágenes en tamaño `QQCIF` (120 x 160). Si se desea usarlo para otro formato como `QCIF` O `CIF`, se deben configurar los parámetros `Maxwidthimage` y `Maxlengthimage` a los valores deseados.
