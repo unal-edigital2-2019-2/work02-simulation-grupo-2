@@ -22,6 +22,7 @@ Tiene un diagrama de caja negra que es el siguiente:
 <img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/caja_negra.png?raw=true" width = "750" >
 `PCLK`, `HREF` y `VSYNC` son puertos que reciben las señales generadas por la cámara para la sincronización de los datos. `PX_DATA` recibe los datos generados por la cámara. `MEM_PX_ADDR` envía a la memoria ram la dirección en la que debe ir  ubicada cierta información de los pixeles. `MEM_PX_DATA` es el puerto que envía los datos. `PX_WR` es una señal que autoriza la escritura de datos en la memoria ram.
 
+
 - Funciona con una máquina de estados que tiene cuatro estados:
   - `WAIT_FRAME_START`, que es el estado inicial, y es el encargado de detectar cuando se empieza un fotograma, detectando cambios en la señal `vsync`
   - `ROW_CAPTURE`, que es el estado en el cuál se capturan los datos de una fila de pixeles
