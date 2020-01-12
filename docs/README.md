@@ -46,7 +46,7 @@ La máquina de estados funciona teniendo en cuenta las señales de control de la
 
 El módulo está configurado para hacer captura de imágenes en tamaño `QQCIF` (120 x 160). Si se desea usarlo para otro formato como `QCIF` O `CIF`, se deben configurar los parámetros `Maxwidthimage` y `Maxlengthimage` a los valores deseados.
 
-##Proceso de simulación
+## Proceso de simulación
 
 Habiendo instanciado el módulo con el resto del hardware, procedimos a hacer la simulación.
 
