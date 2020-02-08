@@ -63,3 +63,7 @@ Al acercar la imágen del segundo frame podemos ver lo siguiente:
 <img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/red_close.png?raw=true" width = "750" >
 
 Esto lo interpretamos como puntos que quedaron sin información en la memoria ram. Se puede ver a traves de ellos y lo que se ve detras es la imágen del frame anterior.
+
+## Protocolo UART
+
+UART son las siglas de *Universal Asynchronous Receiver-Transmitter* que traducido es **Transmisor Receptor Asíncrono Universal**. Este protocolo es utilizado para comunicación serie entre dispositivos digitales. El UART toma bytes de datos y transmite los bits individuales de forma secuencial. En el destino, un segundo UART reensambla los bits en bytes completos. Las funciones principales de chip UART son: manejar las interrupciones de los dispositivos conectados al puerto serie y convertir los datos en formato paralelo, transmitidos al bus de sistema, a datos en formato serie, para que puedan ser transmitidos a través de los puertos y viceversa.
