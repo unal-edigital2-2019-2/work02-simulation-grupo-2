@@ -78,3 +78,9 @@ El diagrama de tiempo del uart se muestra a continuación:
 El uso del protocolo UART es pertinente cuando:
 - Se requiere una línea comunicación barata entre dos dispositivos
 - No es necesaria alta velocidad de transmisión
+
+## Bus Wishbone
+
+El Wishbone es un bus de hardware de código abierto creado para estandarizar la forma en que se comunican dos circuitos integrados. El objetivo es permitir la conexión de cores diferentes dentro de un chip.
+
+<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/wishbone_graph.png?raw=true" width = "750" >
