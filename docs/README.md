@@ -72,7 +72,7 @@ Las funciones principales de chip UART son: manejar las interrupciones de los di
 
 El diagrama de tiempo del uart se muestra a continuación:
 
-<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/UART.jpg?raw=true" width = "750" >
+<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/UART.jpg?raw=true" width = "550" >
 
 
 El uso del protocolo UART es pertinente cuando:
@@ -83,4 +83,4 @@ El uso del protocolo UART es pertinente cuando:
 
 El Wishbone es un bus de hardware de código abierto creado para estandarizar la forma en que se comunican dos circuitos integrados. El objetivo es permitir la conexión de cores diferentes dentro de un chip.
 
-<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/wishbone_graph.png?raw=true" width = "750" >
+<img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/wishbone_graph.png?raw=true" width = "550" >
