@@ -84,3 +84,14 @@ El uso del protocolo UART es pertinente cuando:
 El Wishbone es un bus de hardware de código abierto creado para estandarizar la forma en que se comunican dos circuitos integrados. El objetivo es permitir la conexión de cores diferentes dentro de un chip.
 
 <img src="https://github.com/unal-edigital2-2019-2/work02-simulation-grupo-2/blob/master/docs/figs/wishbone_graph.png?raw=true" width = "550" >
+
+Cada una de las señales tiene una función:
+
+- Las señales `RST_I` y `CLK_I`, compartidas tanto por el maestro como por el esclavo, son generadas por el controlador del sistema (`SysCon`)
+- La salida de dirección del maestro `ADR_O0` es recibida por enrada de dirección `ADR_I0` del esclavo.
+- Tanto el maestro como el esclavo comparten las señales de entrada `DAT_I0` y `DAT_O0`, cada uno alimentando de datos al otro
+- La *write enable output* `WE_O` indica si el ciclo de bus del momento es de tipo *lectura* o *escritura*. La señal es negada para ciclos de *lectura* y de forma corriente para ciclos de *escritura*
+- El *select output array* `SEL_O` indica de donde se esperan los datos válidos para la señal `DAT_I` durante los ciclos de lectura, y dónde se tienen que colocar en `DAT_O` durante los ciclos de escritura
+- `STB_O` se usa cuando el maestro le quiere hacer saber al esclavo que un envío de datos está el proreso
+- El esclavo le indica al maestro que ya ha recibido los datos a traves de `ACK_O` a `ACK_I` (de esclavo a maestro)
+- Para indicar que los datos han sido capturados o que se ha visto un ciclo, se usa la señal `CYC_O` (de maestro a esclavo)
