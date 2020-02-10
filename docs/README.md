@@ -95,5 +95,3 @@ Cada una de las señales tiene una función:
 - `STB_O` se usa cuando el maestro le quiere hacer saber al esclavo que un envío de datos está el proreso
 - El esclavo le indica al maestro que ya ha recibido los datos a traves de `ACK_O` a `ACK_I` (de esclavo a maestro)
 - Para indicar que los datos han sido capturados o que se ha visto un ciclo, se usa la señal `CYC_O` (de maestro a esclavo)
-- 
-- 
