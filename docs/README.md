@@ -103,3 +103,34 @@ Cada una de las señales tiene una función:
 Este módulo se encargará de tomar datos de la cámara con información de los colores de un fotograma, y a partir de esto, mostrar cuál es el color predominante del fotograma. Funciona de la siguiente manera:
 
 La clave para que el módulo clasifique las imágenes es que observa y hace un análisis de los bits más significativos de cada uno de los colores que entrega la memoria por cada pixel. **La lógica utilizada para la discriminación es que si el bit más significativo de uno de los colores está en 1 y el de los otros no, ese será el color predominante de ese pixel**.
+
+Entonces, declaramos unos registros, encargados de contar la cantidad de veces que cada uno de los colores es predominante, llamados `r_out` `g_out` y `b_out`. Estos vana ir acumulando valores a medida que el módulo analiza cada uno de los pixeles para saber el color predominante, como se muestra en el código a continuación:
+
+```verilog
+if (data[7] == 1 && data[4] == 0 && data[1] == 0) begin
+				r_out = r_out + 1;
+			end else if (data[7] == 0 && data[4] == 1 && data[1] == 0) begin
+				g_out = g_out + 1;
+			end else if (data[7] == 0 && data[4] == 0 && data[1] == 1) begin
+				b_out = b_out + 1;
+			end
+```
+
+Luego, una vez terminado el análisis del fotograma, el módulo aplica una lógica para analizar cuál de los contadores tiene acuulado más unidades, y a partir de esto entrega un valor de tres bits, aplicando lógica hot one, es decir, dando en la salida un uno en uno de los bits dependiendo de cuál de los colores es predominante, como se muestra a contnuación:
+
+```verilog
+if ((r_out > g_out) && (r_out > b_out)) begin
+			result = 3'b100;
+		end
+		if ((g_out > r_out) && (g_out > b_out)) begin
+			result = 3'b010;
+		end
+		if ((b_out > g_out) && (b_out > r_out)) begin
+			result = 3'b001;
+		end
+			result = 3'b111;
+	end else begin
+		result = 3'b000;
+	end
+```
+De esta forma, el módulo determinará por hardware cuál de los colores es predominante en el fotograma, y así los podrá mostrar en pantalla.
