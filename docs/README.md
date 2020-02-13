@@ -97,3 +97,9 @@ Cada una de las señales tiene una función:
 - `STB_O` se usa cuando el maestro le quiere hacer saber al esclavo que un envío de datos está el proreso
 - El esclavo le indica al maestro que ya ha recibido los datos a traves de `ACK_O` a `ACK_I` (de esclavo a maestro)
 - Para indicar que los datos han sido capturados o que se ha visto un ciclo, se usa la señal `CYC_O` (de maestro a esclavo)
+
+## Módulo clasificador de imágenes
+
+Este módulo se encargará de tomar datos de la cámara con información de los colores de un fotograma, y a partir de esto, mostrar cuál es el color predominante del fotograma. Funciona de la siguiente manera:
+
+La clave para que el módulo clasifique las imágenes es que observa y hace un análisis de los bits más significativos de cada uno de los colores que entrega la memoria por cada pixel. **La lógica utilizada para la discriminación es que si el bit más significativo de uno de los colores está en 1 y el de los otros no, ese será el color predominante de ese pixel**.
